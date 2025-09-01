@@ -1,0 +1,58 @@
+body {
+  background-color: #202123;
+  color: #e0e0e0;
+}
+
+header {
+  background-color: #2b2c2f;
+  border-bottom: 1px solid #333;
+}
+
+.logo a {
+  color: #ffffff;
+}
+
+.nav-center a {
+  color: #e0e0e0;
+}
+
+.nav-center a:hover {
+  color: #2cd2a1;
+}
+
+.hero {
+  background: linear-gradient(to right, #2b2c2f, #1e1f21);
+  color: #fff;
+}
+
+.hero a {
+  background-color: #10a37f;
+  color: #fff;
+}
+
+.hero a:hover {
+  background-color: #2cd2a1;
+}
+
+section h2 {
+  color: #ffffff;
+}
+
+section p,
+section li {
+  color: #cfcfcf;
+}
+
+footer {
+  background-color: #2b2c2f;
+  color: #888;
+}
+
+#btn-topo {
+  background-color: #10a37f;
+  color: #fff;
+}
+
+#btn-topo:hover {
+  background-color: #2cd2a1;
+}

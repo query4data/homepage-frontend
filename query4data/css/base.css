@@ -1,0 +1,141 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte base */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  padding-top: 4rem;
+  scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #10a37f;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #2cd2a1;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-center ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+/* Main */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 2rem;
+}
+.hero a {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* Seções */
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+section p,
+section li {
+  margin-bottom: 0.5rem;
+}
+
+section ul {
+  list-style: inside disc;
+  padding-left: 1rem;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Botão voltar ao topo */
+#btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-center ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
