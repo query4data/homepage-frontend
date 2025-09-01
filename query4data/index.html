@@ -7,86 +7,101 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome (via CSS CDN para facilitar) -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/dark.css" id="theme-link" />
   </head>
   <body id="topo">
+    <!-- HEADER -->
     <header>
       <div class="container">
         <h1 class="logo">
-          <a href="#topo">Query4Data Compliance</a>
+          <a href="#topo">Q4D Compliance</a>
         </h1>
         <nav class="nav-center">
           <ul>
-            <li>
-              <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
-            </li>
-            <li>
-              <a href="#servicos"><i class="fas fa-cogs"></i> Serviços</a>
-            </li>
-            <li>
-              <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
-            </li>
-            <li>
-              <button id="theme-toggle">
-                <i class="fas fa-moon"></i>
-                <!-- Ícone de lua para dark mode -->
-              </button>
-            </li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
         <h2>Dados com inteligência e confiabilidade</h2>
         <p>
-          Somos especialistas em compliance automatizado e verificação de dados
-          com alta performance.
+          Soluções modernas para compliance automatizado, garantindo segurança e
+          desempenho em cada integração.
         </p>
-        <a href="#contato"><i class="fas fa-envelope"></i> Fale conosco</a>
-      </section>
+        <a href="#contato" class="btn-primary">
+          <i class="fas fa-envelope"></i> Fale conosco
+        </a>
+      </div>
+    </section>
 
-      <section id="sobre">
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="container">
         <h2><i class="fas fa-info-circle"></i> Sobre Nós</h2>
         <p>
-          A Query4Data é uma empresa especializada em soluções de dados para
-          compliance. Oferecemos plataformas modernas para integração,
-          verificação e automação de dados com foco em segurança e desempenho.
+          A <strong>Query4Data</strong> é uma empresa especializada em soluções
+          de dados para compliance. Nossas plataformas permitem integração,
+          verificação e automação de dados com foco em alta performance.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <section id="servicos">
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section bg-light">
+      <div class="container">
         <h2><i class="fas fa-cogs"></i> Nossos Serviços</h2>
-        <ul>
-          <li>Desenvolvimento de plataformas de dados</li>
-          <li>Consultoria Técnica em Compliance</li>
-          <li>Integrações via API com fontes nacionais e internacionais</li>
-        </ul>
-      </section>
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-database card-icon"></i>
+            <h3>Plataformas de Dados</h3>
+            <p>Desenvolvimento de soluções robustas para gestão de dados.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-shield-alt card-icon"></i>
+            <h3>Consultoria em Compliance</h3>
+            <p>Suporte técnico especializado para garantir conformidade.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-plug card-icon"></i>
+            <h3>Integrações via API</h3>
+            <p>Conectamos você a fontes nacionais e internacionais de dados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="contato">
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="container">
         <h2><i class="fas fa-envelope"></i> Contato</h2>
-        <p>Email: contato@query4data.com</p>
-        <p>Telefone: (11) 99999-9999</p>
-      </section>
-    </main>
+        <p><i class="fas fa-envelope"></i> contato@query4data.com</p>
+        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+      </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer>
-      <p>&copy; 2025 Query4Data. Todos os direitos reservados.</p>
+      <div class="container">
+        <p>&copy; 2025 Query4Data. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
   </body>
 </html>
