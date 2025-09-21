@@ -1,11 +1,12 @@
-/* Reset */
+/* ==================== Reset ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonte base */
+/* ==================== body ==================== */
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
@@ -13,7 +14,6 @@ body {
   background: #f2f2f2;
 }
 
-/* Container */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -27,7 +27,27 @@ a {
   transition: all 0.3s ease;
 }
 a:hover {
-  color: #0c8d6c;
+  color: #10a37f;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 0.2em;
+  bottom: 0.1em;
+  background: #10a37f;
+  transform: rotate(-3deg) skew(-6deg);
+  z-index: 99;
+  border-radius: 3px;
+  opacity: 0.07;
 }
 
 /* Header */
@@ -39,20 +59,27 @@ header {
   background: #f2f2f2;
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  z-index: 98;
 }
 
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
 }
 
-.logo a {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #10a37f;
+.logo {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-center ul {
@@ -71,7 +98,7 @@ header .container {
   color: #10a37f;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   display: flex;
   align-items: center;
@@ -79,19 +106,18 @@ header .container {
   text-align: center;
   min-height: 80vh;
   padding: 2rem;
-  background: linear-gradient(to right, #1b6452, #2cd2a1);
-  /* background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../images/hero-section2.jpg"); */
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../images/woman_hero_section_blured.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
 }
 
 .hero h2 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  /* text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 .hero p {
@@ -99,7 +125,8 @@ header .container {
   margin: 0 auto 2rem;
   font-size: 1.2rem;
   line-height: 1.5;
-  /* text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6); */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 
 .btn-primary {
@@ -134,8 +161,14 @@ header .container {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0.5rem;
   font-size: 1.1rem;
   color: #333;
+}
+
+/** Section Servicos */
+#servicos {
+  background: #fffefe;
 }
 
 /* Cards */
@@ -157,6 +190,7 @@ header .container {
 
 .card:hover {
   transform: translateY(-5px);
+  cursor: pointer;
 }
 
 .card-icon {
@@ -176,17 +210,113 @@ header .container {
   color: #666;
 }
 
-/* Footer */
-footer {
-  background: #d3d3d3;
-  color: #333;
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
-  margin-top: 2rem;
+/* Section Contatos */
+#contato {
+  padding: 1rem;
 }
 
-/* Responsivo */
+#contato h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contato p {
+  padding: 0.3rem;
+}
+
+/* Footer */
+footer {
+  background: #e9e8e8;
+  color: #333;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: 2.1rem;
+}
+
+/* ==================== Modal ==================== */
+/* Overlay geral */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 100;
+  transition: opacity 0.3s ease;
+}
+
+/* Caixa do modal em si */
+.modal-body {
+  background: #fff;
+  width: 600px; /* ajuste conforme desejar */
+  max-width: 50%;
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px 0 0 8px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.modal-body img {
+  width: 500px; /* ajuste como quiser */
+  height: auto; /* mantém proporção */
+}
+
+.modal-body h3 {
+  margin: 2rem;
+}
+
+.modal-body p {
+  padding-bottom: 1rem;
+}
+
+.modal-btn-primary {
+  padding: 2rem;
+}
+
+.modal-body img {
+  padding: 2rem;
+}
+
+/* Estado inicial (escondido) */
+.modal-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal-hidden .modal-body {
+  transform: translateX(100%);
+}
+
+/* Estado ativo */
+.modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal.show .modal-body {
+  transform: translateX(0);
+}
+
+/* Botão de fechar opcional */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+}
+
+/* ===================== Responsividade ==================== */
 @media (max-width: 768px) {
   /* Hero */
   .hero h2 {
@@ -198,11 +328,11 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0;
   }
 
-  .logo a {
-    font-size: 1.4rem;
+  .logo img {
+    width: 100px;
   }
 
   .nav-center ul {
