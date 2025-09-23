@@ -436,6 +436,7 @@ footer {
     flex-direction: column;
     gap: 2rem;
     padding-left: 2rem;
+    margin-top: 2rem;
   }
 
   /* Menu visível */
