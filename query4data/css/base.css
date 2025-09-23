@@ -44,7 +44,7 @@ a:hover {
   top: 0.2em;
   bottom: 0.1em;
   background: #10a37f;
-  transform: rotate(-3deg) skew(-6deg);
+  transform: rotate(-2deg) skew(-4deg);
   z-index: 99;
   border-radius: 3px;
   opacity: 0.07;
@@ -60,6 +60,10 @@ header {
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   z-index: 98;
+}
+
+.hamburger {
+  display: none;
 }
 
 header .container {
@@ -131,6 +135,7 @@ header .container {
 
 .btn-primary {
   display: inline-block;
+  margin-top: 1rem;
   padding: 0.8rem 1.6rem;
   border-radius: 30px;
   background: #fff;
@@ -210,9 +215,84 @@ header .container {
   color: #666;
 }
 
+/* Section Quem Ajudamos + Vantagens */
+.vantagens-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.vantagem-item {
+  display: flex;
+  align-items: flex-start; 
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.877);
+  backdrop-filter: blur(4px);  
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 0.6rem;
+  max-width: 500px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vantagem-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.vantagem-item img {
+  width: 40px;   
+  height: 40px;
+  object-fit: contain;
+}
+
+.vantagem-item p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: justify;
+}
+
+.double-column-container {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.container-quem-ajudamos {
+  display: grid;
+  grid-template-columns:repeat(2, 1fr); 
+  gap: 1rem;   
+  margin-top: 1rem;/
+}
+
+.quem-ajudamos-card {
+  background-color: #fff;    
+  border-radius: 8px;              
+  padding: 0.7rem;                   
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+  text-align: center;             
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.quem-ajudamos-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 /* Section Contatos */
 #contato {
   padding: 1rem;
+  background: #fffefe;
 }
 
 #contato h2 {
@@ -221,7 +301,8 @@ header .container {
 }
 
 #contato p {
-  padding: 0.3rem;
+  padding: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -231,11 +312,10 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  margin-top: 2.1rem;
 }
 
 /* ==================== Modal ==================== */
-/* Overlay geral */
+
 .modal {
   position: fixed;
   top: 0;
@@ -250,10 +330,13 @@ footer {
   transition: opacity 0.3s ease;
 }
 
-/* Caixa do modal em si */
+
 .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fff;
-  width: 600px; /* ajuste conforme desejar */
+  width: 600px;
   max-width: 50%;
   padding: 2rem;
   overflow-y: auto;
@@ -264,27 +347,20 @@ footer {
 }
 
 .modal-body img {
-  width: 500px; /* ajuste como quiser */
-  height: auto; /* mantém proporção */
+  width: 500px;
+  height: auto;
 }
 
 .modal-body h3 {
   margin: 2rem;
+  font-size: 1.5rem;
 }
 
 .modal-body p {
   padding-bottom: 1rem;
 }
 
-.modal-btn-primary {
-  padding: 2rem;
-}
-
-.modal-body img {
-  padding: 2rem;
-}
-
-/* Estado inicial (escondido) */
+/* Estado inicial (hidden) */
 .modal-hidden {
   pointer-events: none;
   opacity: 0;
@@ -294,7 +370,6 @@ footer {
   transform: translateX(100%);
 }
 
-/* Estado ativo */
 .modal.show {
   pointer-events: auto;
   opacity: 1;
@@ -304,7 +379,6 @@ footer {
   transform: translateX(0);
 }
 
-/* Botão de fechar opcional */
 .modal-close {
   position: absolute;
   top: 1rem;
@@ -318,31 +392,103 @@ footer {
 
 /* ===================== Responsividade ==================== */
 @media (max-width: 768px) {
+
+  body {
+    padding-top: 40px;
+  }
+
+  /* Header */
+  header .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 99;
+  }
+
+  .nav-center {
+    position: fixed;
+    top: 60px;           
+    right: 0;
+    width: 60%;            
+    max-width: 300px;
+    height: calc(100% - 60px);
+    background: rgba(242, 242, 242, 0.95);
+    box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-center ul {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+  }
+
+  /* Menu visível */
+  .nav-center.open {
+    transform: translateX(20%);
+  }
+
+  .nav-center a {
+    font-size: 0.95rem;
+  }
+  
   /* Hero */
   .hero h2 {
     font-size: 2rem;
   }
 
-  /* Header */
-  header .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0;
-  }
-
-  .logo img {
-    width: 100px;
-  }
-
-  .nav-center ul {
-    flex-direction: row;
-    gap: 2rem;
-    flex-wrap: wrap;
+  .modal {
     justify-content: center;
+    align-items: flex-end; 
   }
 
-  .nav-center a {
-    font-size: 0.95rem;
+  .modal-body {
+    width: 100%; 
+    max-width: none;
+    height: 80vh;
+    border-radius: 16px 16px 0 0;  
+    transform: translateY(100%); 
+    transition: transform 0.3s ease;
+  }
+
+  .modal-body img {
+    width: 400px;
+    height: auto;
+  }
+
+  /* Quando ativa (show) */
+  .modal.show .modal-body {
+    transform: translateY(0);     
+  }
+
+  .container-quem-ajudamos {
+    grid-template-columns: 1fr; 
+  }
+
+   .double-column-container {
+    flex-direction: column;      
+    align-items: center;         
+    gap: 2rem;                   
+  }
+
+ 
+  .double-column-container > div {
+    width: 100%;                 
+    max-width: 500px;             
   }
 }

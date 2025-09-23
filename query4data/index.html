@@ -25,10 +25,17 @@
     <header>
       <div class="container">
         <a href="#topo" class="logo"><img src="images/logo3.svg" /></a>
-        <nav class="nav-center">
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+          ☰
+        </button>
+
+        <nav class="nav-center" id="mobileMenu">
           <ul>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#ajudamos-vantagens">Vantagens</a></li>
+            <li><a href="#ajudamos-vantagens">Quem Ajudamos</a></li>
             <li><a href="#contato">Fale Conosco</a></li>
           </ul>
         </nav>
@@ -58,10 +65,13 @@
           <strong> due diligence e compliance</strong>.
         </p>
         <p>
-            Nossa solução conecta você a listas de sanções e informações
-            cadastrais, simples e ágil. Combinando tecnologia, automação e
-            segurança, <strong>ajudamos empresas a tomar decisões rápidas e confiáveis
-            em processos de KYC, KYE, PLD-FTP e gestão de riscos. </strong>
+          Nossa solução conecta você a listas de sanções e informações
+          cadastrais, simples e ágil. Combinando tecnologia, automação e
+          segurança,
+          <strong
+            >ajudamos empresas a tomar decisões rápidas e confiáveis em
+            processos de KYC, KYE, PLD-FT e gestão de riscos.
+          </strong>
         </p>
       </div>
     </section>
@@ -70,15 +80,18 @@
     <section id="servicos" class="section bg-light">
       <div class="container">
         <h2><i class="fas fa-cogs"></i> Nossos Serviços</h2>
-
         <p>
           Oferecemos serviços online de fácil integração, permitindo consultas
           automáticas e em tempo real.
-          <span class="highlight"><strong>
-            Através de nossa API, podemos conectar sistemas e aplicativos,
-            permitindo que sua equipe possa tomar as melhores decisões com
-            precisão e segurança.
-          </span></strong>
+        </p>
+        <p>
+          <span class="highlight">
+            <strong
+              >Através de nossa API, podemos conectar sistemas e aplicativos,
+              permitindo que sua equipe possa tomar as melhores decisões com
+              precisão e segurança.
+            </strong>
+          </span>
         </p>
 
         <!-- cards -->
@@ -92,7 +105,7 @@
             </p>
             <a class="btn-primary"> Saiba mais </a>
           </div>
-          <div class="card">
+          <div class="card" data-modal="modal-lst-restritiv-nacional">
             <i class="fas fa-triangle-exclamation card-icon"></i>
             <h3>Listas Restritivas Nacionais</h3>
             <p>
@@ -112,27 +125,148 @@
           </div>
         </div>
 
+        <!-- modal -->
         <div id="modal-lst-restritiv-inter" class="modal modal-hidden">
           <div class="modal-body">
             <button class="modal-close">x</button>
             <h3>Listas Restritivas Internacionais</h3>
             <p>
-              As listas internacionais registram indivíduos, empresas e entidades envolvidas em atividades ilícitas, como terrorismo, lavagem de dinheiro e corrupção.
-            </p>
-                <img src="images/sanction-map.avif"/>
-            <p>
-              Elas são atualizadas frequentemente e o monitoramento contínuo é exigido por regulamentações nacionais e internacionais, como a Lei nº 9.613/1998 e normativos do BACEN.
+              As listas restritivas, mantidas por órgãos internacionais,
+              registram sanções comerciais a indivíduos e entidades envolvidas
+              em atividades ilícitas, como terrorismo e lavagem de dinheiro.
             </p>
             <p>
-              <span class="highlight"><strong>
-                A Query4Data realiza o monitoramento contínuo dessas listas, ajudando sua empresa a se manter em conformidade com políticas de PLD/FTP.
-              </strong></span>
+              <span class="highlight">
+                <strong>
+                  O monitoramento contínuo dessas listas é exigido por
+                  regulamentações nacionais e internacionais, como a Lei nº
+                  9.613/1998 e normativas do BACEN.
+                </strong>
+              </span>
+            </p>
+            <p>
+              Por serem mantidas por diferentes países, a adição e remoção de
+              entidades sancionadas é frequente e depende das legislações
+              próprias de cada governo.
+            </p>
+            <img src="images/fluxograma-listas-inter.png" />
+            <p>
+              <span class="highlight"
+                ><strong>
+                  A Query4Data realiza o monitoramento contínuo dessas listas,
+                  ajudando sua empresa a se manter em conformidade com políticas
+                  de PLD/FTP.
+                </strong></span
+              >
             </p>
 
             <a href="#contato" class="btn-primary modal-btn-primary">
               <i class="fas fa-envelope"></i> Fale com um especialista
             </a>
+          </div>
+        </div>
 
+        <div id="modal-lst-restritiv-nacional" class="modal modal-hidden">
+          <div class="modal-body">
+            <button class="modal-close">x</button>
+            <h3>Listas Restritivas Nacionais</h3>
+            <p>
+              As listas nacionais são bases de dados de órgãos públicos
+              brasileiros de pessoas físicas e jurídicas envolvidas em práticas
+              ilícitas, como lavagem de dinheiro e corrupção.
+            </p>
+            <p>
+              <span class="highlight">
+                <strong>
+                  Relacionamentos com entidades sancionadas podem submeter
+                  empresas a riscos reputacionais e comerciais.
+                </strong>
+              </span>
+            </p>
+            <p>
+              Embora sejam todas nacionais, a consulta às listas brasileiras não
+              é centralizada, uma vez que são mantidas por diferentes órgãos da
+              União.
+            </p>
+            <img src="images/fluxograma-listas-nac.png" />
+            <p>
+              <span class="highlight"
+                ><strong>
+                  A Query4Data realiza o monitoramento contínuo dessas listas,
+                  ajudando sua empresa a se manter em conformidade com políticas
+                  de PLD/FTP.
+                </strong></span
+              >
+            </p>
+
+            <a href="#contato" class="btn-primary modal-btn-primary">
+              <i class="fas fa-envelope"></i> Fale com um especialista
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM AJUDAMOS & VANTAGENS-->
+    <section id="ajudamos-vantagens" class="section">
+      <div class="container double-column-container">
+        <div>
+          <h2>Vantagens</h2>
+          <div class="container-vantagens">
+            <div class="vantagem-item">
+              <img src="images/documentation-icon.png" />
+              <div class="vantagem-text">
+                <h4>Documentação Direta</h4>
+                <p>
+                  Documentação simples, direta e objetiva. Sem dor de cabeça.
+                </p>
+              </div>
+            </div>
+            <div class="vantagem-item">
+              <img src="images/integration-icon.png" />
+              <div class="vantagem-text">
+                <h4>Integração Rápida</h4>
+                <p>
+                  API preparada para uma integração rápida e sem complexidada
+                  para o cliente
+                </p>
+              </div>
+            </div>
+            <div class="vantagem-item">
+              <img src="images/switch-on-icon.png" />
+              <div class="vantagem-text">
+                <h4>Alta Disponibilidade</h4>
+                <p>Sistemas resilientes que garantem a integração contínua</p>
+              </div>
+            </div>
+            <div class="vantagem-item">
+              <img src="images/trust.icon.png" />
+              <div class="vantagem-text">
+                <h4>Confiabilidade</h4>
+                <p>
+                  Garantia de dados confiáveis e atualizados, proporcionando a
+                  melhor tomada de decisão para seu processo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>Quem Ajudamos</h2>
+          <div class="container-quem-ajudamos">
+            <div class="quem-ajudamos-card">Instituições financeiras</div>
+            <div class="quem-ajudamos-card">Fintechs</div>
+            <div class="quem-ajudamos-card">Seguradoras</div>
+            <div class="quem-ajudamos-card">Previdência privada</div>
+            <div class="quem-ajudamos-card">Setor imobiliário</div>
+            <div class="quem-ajudamos-card">Crédito</div>
+            <div class="quem-ajudamos-card">Corretoras</div>
+            <div class="quem-ajudamos-card">Recrutamento & Seleção</div>
+            <div class="quem-ajudamos-card">Comércio exterior</div>
+            <div class="quem-ajudamos-card">Bens de luxo</div>
+            <div class="quem-ajudamos-card">Jogos e sorteios</div>
+            <div class="quem-ajudamos-card">Marketplaces</div>
           </div>
         </div>
       </div>
@@ -162,5 +296,6 @@
     </footer>
 
     <script src="js/modal.js"></script>
+    <script src="js/hamburuger.js"></script>
   </body>
 </html>
