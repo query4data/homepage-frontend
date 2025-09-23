@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "live-server query4data --open=index.html --port=3000"
+    "start": "live-server docs --open=index.html --port=3000"
   },
   "keywords": [],
   "author": "",
